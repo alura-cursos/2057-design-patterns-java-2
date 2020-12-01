@@ -36,7 +36,12 @@ public class Orcamento implements Orcavel {
 	}
 
 	public BigDecimal getValor() {
-		return this.valor;
+		try {
+			Thread.sleep(3000);
+			return this.valor;
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	public int getQuantidadeItens() {
